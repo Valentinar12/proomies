@@ -67,6 +67,9 @@ figure {
   justify-content: center;
   
 }
+ul#encontrarcuidador_hogar a {
+  margin: auto;
+}
 .imagengrande{
     width: 40%;
     
@@ -112,6 +115,9 @@ ul#encontrarcuidador_hogar  a{
 p#parrafo {
   text-align: center;
 }
+p#parrafo1 {
+  text-align: center;
+}
 .footer{
     display: flex;
     justify-content: space-between;
@@ -126,16 +132,23 @@ width: 15%;
 
 .encontraruncuidador {
     background-color: #adc178;
-    
+    border-radius: 2em;
+    margin-inline: 1em;
 }  
 .encontraruncuidador h2 {
-    color: white;
+  color: white;
+  padding: .3em;
+  font-size: 1.3em;
 }
 .encontrarunhogar {
-    background-color: #adc178;
+  background-color: #adc178;
+  border-radius: 2em;
+  margin-inline: 1em;
 }  
 .encontrarunhogar h2{
     color: white;
+    padding: .3em;
+  font-size: 1.3em;
 }
 .imagenesmias{
     width: 75%; 
@@ -148,27 +161,33 @@ width: 15%;
 }
 .vision {
     background-color: #adc178;
-   
+    margin-inline: 1em;
     border-radius: 1em;
    
 }
-.vision h2{
-    color: white;
+.vision h2 {
+  color: white;
+  font-size: 1.3em;
+  padding: .3em;
 }
 .mision {
     background-color: #adc178;
-    
+    margin-inline: 1em;
     border-radius: 1em;
     
 }
 .mision h2{
-    color: white;
+  color: white;
+  font-size: 1.3em;
+  padding: .3em;
 }
-.comoevaluamosalusuario{
-    display: flex;
-    background-color: #adc178;
-    padding: .3em;
-    align-items: start;
+.comoevaluamosalusuario {
+  display: flex;
+  background-color: #adc178;
+  
+  align-items: start;
+  border-radius: 2em;
+  margin-inline: 1em;
 }
 .comoevaluamosalusuario h3{
     color: white;
@@ -189,6 +208,7 @@ picture.perrosrazas {
     background-color: #adc178;
     padding: .1em;
     align-items: start;
+    border-radius: 2em;
     
 }
 .subrayado a{
@@ -262,7 +282,15 @@ h2 { grid-area: titulo; }
 #art2       { grid-area: art2; }
 #art3      { grid-area: art3; }
 
-
+.preguntafrecuente h3 {
+  color: white;
+  padding: .3em;
+}
+.preguntafrecuente {
+  background-color: #adc178;
+  border-radius: 2em;
+  margin-inline: 1em;
+}
 /* ----------
    encabezado
    ---------- */
@@ -453,10 +481,12 @@ h2 { grid-area: titulo; }
 
 #prev {
   left: 10px; /* Posición de la flecha izquierda */
+  border-radius: 4em;
 }
 
 #next {
-  right: 10px; /* Posición de la flecha derecha */
+  right: 10px;
+  border-radius: 4em;
 }
 
 form#login-form {
@@ -468,6 +498,30 @@ form#login-form {
   border-radius: 1em;
   
 }
+form#register-form {
+  display: flex;
+  flex-direction: column;
+  background-color: #adc178;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 1em;
+  padding-top: 6.5em;
+}
+form#register-form {
+  
+  padding-bottom: 6.5em;
+}
+input#register-email {
+  margin-block-end: 2em;
+  height: 2.5em;
+  margin-inline: 1em;
+}
+input#register-password {
+  margin-block-end: 2em;
+  height: 2.5em;
+  margin-inline: 1em;
+}
+
 
 label {
     padding-block-end: 1em;
@@ -523,7 +577,7 @@ button {
     object-fit: cover; /* Asegura que la imagen se adapte al círculo */
     object-position: center; /* Centra la imagen dentro del círculo */
     margin: 0 auto 10px; /* Centra y da espacio debajo */
-    display: block;
+   
   }
   
   .cuidador-card__name {
@@ -580,9 +634,18 @@ ul.perfil__services {
 
   
 @media (min-width: 40em) {
+  main {
+    padding: 1.5em;
+}
+
    #seccion_index article {
     flex-direction: row;
    }
+   p#parrafo1 {
+    position: relative;
+    right: 4.5em;
+    text-align: left;
+}
    body {
     background-color: #f0ead2;
     font-family: 'open sans', sans-serif;
@@ -590,14 +653,17 @@ ul.perfil__services {
     display: flex;
     flex-direction: column;
 }
-div#auth-container h1 {
-  margin: 2em;
+form#register-form {
+  padding-bottom: 6.5em;
+  padding-inline: 4em;
+  margin-inline: 10em;
+  margin: 8.5em;
 }
 form#login-form {
   display: flex;
   flex-direction: column;
   background-color: #adc178;
-  margin: 1em;
+  margin: 3em;
   padding: 1em;
   border-radius: 1em;
   margin-inline: 10em;
@@ -674,6 +740,7 @@ form#login-form {
         color: #fff; /* Color de la flecha */
         z-index: 1; /* Asegura que las flechas estén sobre la imagen */
       }
+      
      /* el menú deja de ser fijo */
   header nav.navmenu {
     /* para que esté en capa superior pero que no parezca */
@@ -771,12 +838,67 @@ form#login-form {
 
     @media (min-width: 60em) {
         #seccion_index {
+          .contenedora {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Botón del menú (hamburguesa) */
+        .menu-btn {
+            display: none; /* Oculto en versión escritorio */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .menu-btn .btn-linea {
+            width: 100%;
+            height: 3px;
+            background-color: #333;
+        }
+        
+        /* Menú de navegación */
+        .navmenu {
+            display: flex;
+        }
+        
+        .menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu li {
+            margin: 0 15px;
+        }
+        
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .menu a:hover {
+            color: #007bff;
+        }
             display: grid;
             grid-template-areas: 
             "titulo titulo titulo"
             "art1 art2 art3";
           
         }
+        p#parrafo1 {
+          position: relative;
+          right: 1em;
+          text-align: left;
+      }
         #seccion_index article {
             
             flex-direction: column;
@@ -813,46 +935,7 @@ form#login-form {
             }
             
             
-              /* Contenedor del header */
-              header .contenedora {
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
-                align-items: center;
-              }
-            
-              /* Menú compacto hacia la izquierda */
-              nav.navmenu ul.menu {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 0.5rem;
-                width: auto; /* Quitamos 100% para permitir alineación a la izquierda */
-                max-width: 800px; /* Opcional: limitar el ancho */
-                margin: 0; /* Elimina centrado automático */
-                padding: 0.5rem 0;
-                justify-content: start; /* Alinea las columnas hacia la izquierda */
-              }
-            
-              /* Enlaces del menú */
-              nav.navmenu ul.menu li a {
-                text-align: center;
-                padding: 0.5rem 0.75rem;
-                background: #adc178;
-                color: white;
-                border-radius: 6px;
-                font-size: 0.9rem;
-                transition: all 0.3s ease;
-              }
-            
-              /* Hover para los enlaces */
-              nav.navmenu ul.menu li a:hover {
-                background: #6C584C;
-              }
-            
-              /* Botón de hamburguesa desaparece en escritorio */
-              .menu-btn {
-                display: none;
-              }
+             
             
             form#login-form {
               display: flex;
